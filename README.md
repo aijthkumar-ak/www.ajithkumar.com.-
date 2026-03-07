@@ -60,7 +60,7 @@
 <body>
 
 <!-- Photo -->
-<img src="https://drive.google.com/uc?export=view&id=1ZQ2W93KGQmNshh_ZmEihajP5fHaD8oJ4";
+#<img src="https://drive.google.com/uc?export=view&id=1ZQ2W93KGQmNshh_ZmEihajP5fHaD8oJ4";
 #alt="Birthday Photo" 
 #class="birthday-photo">
 
