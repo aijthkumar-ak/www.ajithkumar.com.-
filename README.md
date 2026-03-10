@@ -13,7 +13,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background-color: #ffe6e6;
+    background-color: yellow;
     font-family: Arial, sans-serif;
     overflow: hidden;
   }
@@ -21,8 +21,8 @@
   /* Animated "Happy Birthday" text at top */
   .happy-birthday {
     font-size: 2em;
-    color: #ff69b4;
-    animation: bounce 2s infinite alternate;
+    color: black;
+    animation: bounce 4s infinite alternate;
     margin-top: 20px;
   }
 
@@ -36,15 +36,15 @@
 
   /* Butterfly at bottom */
   .butterfly {
-    font-size: 5em;
+    font-size: 9em;
     /* Optional: add some animation to the butterfly */
     animation: flutter 3s infinite alternate ease-in-out;
   }
 
   /* Moving "Thanks" text at bottom, moving up and down */
   .thanks {
-    font-size: 2em;
-    color: #ff69b4;
+    font-size: 7em;
+    color: red;
     animation: moveUpDown 2s infinite ease-in-out;
     margin-bottom: 20px;
   }
@@ -72,7 +72,7 @@
 <body>
 
   <!-- Top animated "Happy Birthday" -->
-  <div class="happy-birthday">Happy Birthday</div>
+  <div class="happy-birthday ">May your birthday ignite the spark of ambition and determination in you</div>
 
   <!-- Optional center content -->
   <div class="center"></div>
@@ -81,7 +81,7 @@
   <div class="butterfly">🦋</div>
 
   <!-- "Thanks" moving up and down -->
-  <div class="thanks">Thanks</div>
+  <div class="thanks">Sowmii</div>
 
 </body>
 </html>
