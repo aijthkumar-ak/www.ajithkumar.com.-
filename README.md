@@ -19,7 +19,7 @@ body{
 /* Top Happy Birthday text */
 .top-text{
   position:absolute;
-  top:20px;
+  top:40px;
   width:100%;
   text-align:center;
   font-size:40px;
