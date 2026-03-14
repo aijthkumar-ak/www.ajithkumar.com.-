@@ -1,107 +1,129 @@
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Birthday Love Animation</title>
-
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Love Family Birthday Animation</title>
 <style>
-
-body{
-  margin:0;
-  background:linear-gradient(white);
-  overflow:hidden;
-  height:100vh;
-  position:relative;
-  font-family:Arial, sans-serif;
-}
-
-/* Top Happy Birthday text */
-.top-text{
-  position:absolute;
-  top:40px;
-  width:100%;
-  text-align:center;
-  font-size:40px;
-  color:#000080;
-  font-weight:bold;
-}
-
-/* Bottom Name text moving up & down */
-.bottom-name{
-  position:absolute;
-  bottom:40px;
-  width:100%;
-  text-align:center;
-  font-size:90px;
-  color:#00FF00;
-  font-weight:bold;
-  animation:moveName 0.8s infinite alternate;
-}
-
-/* Speed up-down animation */
-@keyframes moveName{
-  from{ transform:translateY(0); }
-  to{ transform:translateY(-25px); }
-}
-
-/* Heart style */
-.heart{
-  position:absolute;
-  width:30px;
-  height:30px;
-  background:red;
-  clip-path: polygon(
-    50% 0%, 61% 35%, 98% 35%, 68% 57%,
-    79% 91%, 50% 70%, 21% 91%, 32% 57%,
-    2% 35%, 39% 35%
-  );
-  opacity:0.8;
-  animation:floatUp 8s linear forwards;
-}
-
-/* Heart floating animation */
-@keyframes floatUp{
-  0%{
-    transform:translateY(100vh) scale(0.5);
-    opacity:0;
+  body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    position: relative;
+    height: 100vh;
+    background: #ffe6f0; /* Light pink background */
   }
-  10%{opacity:1;}
-  100%{
-    transform:translateY(-200px) scale(1);
-    opacity:0;
-  }
-}
 
+  /* Love emojis animation container */
+  .emoji-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  /* Individual emoji styles */
+  .emoji {
+    position: absolute;
+    font-size: 24px;
+    animation: floatUp 20s linear forwards;
+  }
+
+  @keyframes floatUp {
+    0% {
+      transform: translateY(100vh) translateX(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-10vh) translateX(20px);
+      opacity: 0;
+    }
+  }
+
+  /* Top birthday wish box */
+  .top-box {
+    position: fixed;
+    top: 20px;
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 15px;
+    background-color:#ffe6f0;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1.5em;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  }
+
+  /* Bottom name box */
+  .bottom-box {
+    position: fixed;
+    bottom: 20px;
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 15px;
+    background-color:#ffe6f0;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1.5em;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  }
 </style>
 </head>
-
 <body>
 
-<div class="top-text">🎉 Happy Birthday 🎉</div>
+<!-- Love Emoji Moving Animation -->
+<div class="emoji-container" id="emojiContainer"></div>
 
-<div class="bottom-name">Sowmiii💖</div>
+<!-- Top Birthday Wishes -->
+<div class="top-box">
+  ✨Happy Birthday to You paa🌹!
+</div>
+
+<!-- Bottom Name Box -->
+<div class="bottom-box">
+  💃Sowmiii👀❤️
+</div>
 
 <script>
+  const emojiContainer = document.getElementById('emojiContainer');
 
-const totalHearts=30;
+  // Function to generate random emojis and animate them
+  function createEmoji() {
+    const emoji = document.createElement('div');
+    emoji.className = 'emoji';
+    emoji.innerHTML = '❤️'; // Love emoji, you can add more emojis if desired
 
-for(let i=0;i<totalHearts;i++){
-  const heart=document.createElement('div');
-  heart.className='heart';
+    // Random horizontal start position
+    const startX = Math.random() * 100;
+    emoji.style.left = startX + 'vw';
 
-  heart.style.left=Math.random()*100+'vw';
+    // Random size
+    const size = Math.random() * 10 + 20; // 20px to 30px
+    emoji.style.fontSize = size + 'px';
 
-  const delay=Math.random()*5;
-  heart.style.animationDelay=delay+'s';
+    // Random delay
+    const delay = Math.random() * 10; // 0 to 10 seconds
+    emoji.style.animationDelay = delay + 's';
 
-  const size=20+Math.random()*20;
-  heart.style.width=size+'px';
-  heart.style.height=size+'px';
+    // Append and remove after animation
+    emojiContainer.appendChild(emoji);
 
-  document.body.appendChild(heart);
-}
+    // Remove emoji after animation duration
+    setTimeout(() => {
+      emoji.remove();
+    }, (20 + delay) * 1000); // 20s animation + delay
+  }
 
+  // Generate emojis periodically
+  setInterval(createEmoji, 300); // Every 300ms create a new emoji
+
+  // Optional: create some at start
+  for(let i=0; i<20; i++) {
+    createEmoji();
+  }
 </script>
 
 </body>
