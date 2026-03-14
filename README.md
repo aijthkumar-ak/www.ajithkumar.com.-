@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
@@ -12,7 +12,7 @@
     font-family: Arial, sans-serif;
     position: relative;
     height: 100vh;
-    background: #ffe6f0; /* Light pink background */
+    background⚪; /* Light pink background */
   }
 
   /* Love emojis animation container */
@@ -49,7 +49,7 @@
     max-width: 600px;
     margin: 0 auto;
     padding: 15px;
-    background-color:#ffe6f0;
+    background-color:yellow;
     border-radius: 10px;
     text-align: center;
     font-size: 1.5em;
@@ -64,7 +64,7 @@
     max-width: 600px;
     margin: 0 auto;
     padding: 15px;
-    background-color:#ffe6f0;
+    background-color:yellow;
     border-radius: 10px;
     text-align: center;
     font-size: 1.5em;
